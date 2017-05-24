@@ -2,11 +2,12 @@
 
 Complete
 - menu bar
+- register
 - login
 - logout
 - get or change user info
+- register
 
 Incomplete
-- register (need to modify registerAction.php
 - main randomed chord
 - randomed chord history
