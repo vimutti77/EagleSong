@@ -58,9 +58,6 @@
 		  <H2><?php echo ($album);?><H2>
 		  <br>
 		<img src="/chords/<?php echo ($index);?>.png">
-      <!--
-      ######################### Add randomed chord to here #########################
-      //-->
     </div>
     </section>
   </body>
