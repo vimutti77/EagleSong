@@ -29,7 +29,7 @@
 	header("location: ./index.php");
 
 	function xorShift($string) {
-    $key = 'mmkgadget';
+    $key = 'uvuvwevwevweonyetenyevweugwemubwenossas';
     $text = $string;
     $outText = '';
     for($i=0; $i<strlen($text);$i++ ){
