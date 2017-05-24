@@ -6,7 +6,7 @@ Complete
 - login
 - logout
 - get or change user info
+- main randomed chord
 
 Incomplete
-- main randomed chord
 - randomed chord history
