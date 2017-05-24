@@ -1,0 +1,25 @@
+<style type="text/css">
+	html {
+		height: 100%;
+	}
+	body {
+		background: rgb(221,241,249);
+		background: -moz-linear-gradient(-45deg, rgba(221,241,249,1) -1%, rgba(254,255,255,1) 0%, rgba(221,241,249,1) 0%, rgba(221,241,249,1) 0%, rgba(221,241,249,1) 6%, rgba(221,241,249,1) 6%, rgba(221,241,249,1) 9%, rgba(221,241,249,1) 13%, rgba(143,217,247,1) 47%, rgba(45,182,237,1) 100%);
+		background: -webkit-linear-gradient(-45deg, rgba(221,241,249,1) -1%,rgba(254,255,255,1) 0%,rgba(221,241,249,1) 0%,rgba(221,241,249,1) 0%,rgba(221,241,249,1) 6%,rgba(221,241,249,1) 6%,rgba(221,241,249,1) 9%,rgba(221,241,249,1) 13%,rgba(143,217,247,1) 47%,rgba(45,182,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(135deg, rgba(221,241,249,1) -1%,rgba(254,255,255,1) 0%,rgba(221,241,249,1) 0%,rgba(221,241,249,1) 0%,rgba(221,241,249,1) 6%,rgba(221,241,249,1) 6%,rgba(221,241,249,1) 9%,rgba(221,241,249,1) 13%,rgba(143,217,247,1) 47%,rgba(45,182,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ddf1f9', endColorstr='#2db6ed',GradientType=1 );
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		min-height: 100%;
+	}
+	div.container {
+		padding-top: 15px;
+		margin-bottom: 20px;
+		background-color: white;
+		height: auto;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+	div.panel-group {
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+</style>

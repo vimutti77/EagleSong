@@ -1,0 +1,61 @@
+<html>
+	<link rel="stylesheet" type="text/css" href="styles/bulma.css">
+	<title>Registration</title>
+	<body>
+		<section class="is-large" style="margin-left:20%">
+			<div class="container is-1">
+				<div class="heading">
+					<h1><font size="11" face="verdana">EagleSong</font></h1>
+				</div>
+				<script type="text/javascript">
+					function validateForm(){
+						var pass = document.forms["regis"]["passwordBox"].value;
+						var passConfirm = document.forms["regis"]["passConfirmBox"].value;
+						if(pass!=passConfirm){
+							alert("Password and password confirmation doesn't match!");
+							return false;
+						}
+					}
+				</script>
+				<br>
+				<h2><font size="6">Registration</font></h2>
+				<form name="regis" action="registerAction.php" onsubmit="return validateForm()" method="post">
+					<div class="columns">
+						<div class="column">
+							First name:<br>
+							<input class="input is-primary" style="width:40%" type="text" name="firstName">
+							<br>
+							Phone:<br>
+							<input class="input is-primary" style="width:40%" type="text" name="phone">
+							<br>
+							Address:<br>
+							<input class="input is-primary" style="width:70%" type="text" name="address">
+							<br>
+							Password:<br>
+							<input id="passwordBox" class="input is-primary" style="width:40%" type="password" name="password">
+							<br>
+						</div>
+						<div class="column">
+							Last name:<br>
+							<input class="input is-primary" style="width:40%" type="text" name="lastName">
+							<br>
+							Email address:<br>
+							<input class="input is-primary" style="width:40%" type="text" name="email">
+							<br>
+							<br>
+							<br>
+							<br>
+							Password confirmation:<br>
+							<input id="passConfirmBox" class="input is-primary" style="width:40%" type="password" name="passConfirm">
+							<br>
+							<br>
+						</div>
+					</div>
+					By clicking the submit button below, you agreed with the <a href="https://www.google.co.th/?gws_rd=ssl#q=terms+and+conditions" target="_blank">terms and conditions of uses.</a>
+					<br>
+					<input a class="button is-primary" type="submit" value="Submit">
+				</form>
+			</div>
+		</section>
+	</body>
+</html>
