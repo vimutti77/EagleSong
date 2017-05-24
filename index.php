@@ -41,6 +41,23 @@
 		</nav>
     <section class="is-large">
     <div class="container">
+			<?php
+			$file = "http://127.0.0.1/chords/chorddb.csv";
+			$lines = file($file);
+			$x = $lines[0];
+			#echo ($x);
+			$x = $lines[rand(1,31)];
+			list($index, $artist, $album, $title) = split("[,]", $x);
+			#echo "index: $index; name: $name; Url: $url<br />\n";
+			?>
+			<center>
+		  <input type="button" value="Change!" onClick="window.location.reload()">
+		</center>
+		<center>
+		  <H1><?php echo ($artist);?> - <?php echo ($title);?></H>
+		  <H2><?php echo ($album);?><H2>
+		  <br>
+		<img src="/chords/<?php echo ($index);?>.png">
       <!--
       ######################### Add randomed chord to here #########################
       //-->
