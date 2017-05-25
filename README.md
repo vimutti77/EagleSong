@@ -9,4 +9,4 @@ All done
 - main randomed chord
 - randomed chord history
 
-Report Not Done ! 
+Report Done ! 
