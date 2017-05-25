@@ -5,7 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="./styles/customer.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>EagleSong</title>
+    <title>History</title>
 	</head>
   <body>
 		<nav class="navbar navbar-inverse">
@@ -19,27 +19,10 @@
 				<ul class="nav navbar-nav navbar-right">
 					<?php
 	  					session_start();
-
-	  					$file = "./chords/chorddb.csv";
-						$lines = file($file);
-						$x = $lines[rand(1,31)];
-						list($index, $artist, $album, $title) = explode(",", $x);
-						#echo "index: $index; name: $name; Url: $url<br />\n";
-
 			            if(!isset($_SESSION['id'])) {
 							echo "<li><a href='userRegis.html'><span class='glyphicon glyphicon-copy'></span> Register</a></li>";
 							echo "<li><a href='login.php'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>";
 			            } else {
-			            	$con = mysqli_connect("localhost","root","","eaglesong");
-							if (mysqli_connect_errno()) {
-								die("Failed to connect to MySQL: " . mysqli_connect_error());
-							}
-							$sql = "INSERT IGNORE INTO History VALUES ('" . $_SESSION['id'] . "','" . $index . "', CURRENT_TIMESTAMP)";
-							if (!mysqli_query($con, $sql)) {
-								die('Error: ' . mysqli_error($con));
-							}
-							mysqli_close($con);
-
 							echo '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Account <span class="caret"></span></a>' .
 									"<ul class='dropdown-menu'>" .
 										'<li><a href="userInfo.php"><span class="glyphicon glyphicon-pencil"></span>   Account Informations</a></li>' .
@@ -54,14 +37,9 @@
 		</nav>
     <section class="is-large">
     <div class="container">
-			<center>
-		  <input type="button" value="Change!" onClick="window.location.reload()">
-		</center>
-		<center>
-		  <H1><?php echo ($artist);?> - <?php echo ($title);?></H>
-		  <H2><?php echo ($album);?><H2>
-		  <br>
-		<img src="./chords/<?php echo ($index);?>.png">
+      <!--
+      ######################### Add history to here #########################
+      //-->
     </div>
     </section>
   </body>
