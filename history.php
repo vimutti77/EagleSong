@@ -3,6 +3,7 @@
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./styles/snackbar.css">
 		<link rel="stylesheet" type="text/css" href="./styles/customer.css">
+		<link rel="stylesheet" type="text/css" href="./styles/history.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>History</title>
@@ -37,9 +38,46 @@
 		</nav>
     <section class="is-large">
     <div class="container">
-      <!--
-      ######################### Add history to here #########################
-      //-->
+    <div id="demo">
+ 	<h1 align='center'>Random Chord History</h1>
+<?php
+	$con = mysqli_connect("localhost","root","","eaglesong");
+	if (mysqli_connect_errno()) {
+		die("Failed to connect to MySQL: " . mysqli_connect_error());
+	}
+    $userID = 'userID';
+    $chordID = 'chordID';
+    $dateTime = 'dateTime';
+
+$sql = mysqli_query($con, "SELECT * FROM history WHERE userID = '".$_SESSION['id']."' ORDER BY dateTime DESC");
+?>
+ 	<div class="table-responsive-vertical shadow-z-1">
+ 	<table id="table" class="table table-hover table-mc-light-blue">
+ 	<div class="tbl-header">
+ 	<tr ><td>Song Name</td><td>Artist</td><td>Album</td><td>Time</td><td>Link</td></tr>
+ 	</div>
+
+<?php
+$file = "./chords/chorddb.csv";
+$lines = file($file);
+while($rows = mysqli_fetch_array($sql))
+{
+	$x = $lines[$rows[$chordID]];
+	list($index, $artist, $album, $title) = explode(",", $x );
+	#$
+    echo"<tr><td>";
+    echo"$title<br></td>";
+    echo"<td>$artist<br></td>";
+    echo"<td>$album<br></td>";
+    echo"<td>$rows[$dateTime]<br></td>";   
+    echo"<td><a href=".'"index.php?chordID='.$rows[$chordID].'"'.">See Chords</a><br></td>";   
+    echo"</tr>";
+
+}
+echo "</table>";
+echo "</div>";
+?>
+	</div>
     </div>
     </section>
   </body>

@@ -22,8 +22,12 @@
 
 	  					$file = "./chords/chorddb.csv";
 						$lines = file($file);
+						if(!isset($_GET['chordID']))
 						$x = $lines[rand(1,31)];
+						else
+						$x = $lines[$_GET['chordID']];
 						list($index, $artist, $album, $title) = explode(",", $x);
+							
 						#echo "index: $index; name: $name; Url: $url<br />\n";
 
 			            if(!isset($_SESSION['id'])) {
@@ -34,7 +38,7 @@
 							if (mysqli_connect_errno()) {
 								die("Failed to connect to MySQL: " . mysqli_connect_error());
 							}
-							$sql = "INSERT IGNORE INTO History VALUES ('" . $_SESSION['id'] . "','" . $index . "', CURRENT_TIMESTAMP)";
+							$sql = "INSERT IGNORE INTO History VALUES ('" . $_SESSION['id'] . "','" . bcsub($index,1) . "', CURRENT_TIMESTAMP)";
 							if (!mysqli_query($con, $sql)) {
 								die('Error: ' . mysqli_error($con));
 							}
