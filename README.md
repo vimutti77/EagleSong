@@ -8,3 +8,5 @@ All done
 - get or change user info
 - main randomed chord
 - randomed chord history
+
+Report Not Done ! 
